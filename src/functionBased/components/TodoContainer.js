@@ -3,14 +3,13 @@ import { Route, Switch } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import Header from './Header';
 import InputTodo from './InputTodo';
-import TodosList from './TodosList';
 import About from '../../pages/About';
 import NotMatch from '../../pages/NotMatch';
 import Navbar from './Navbar';
+import TodosList from './TodosList';
 
 const TodoContainer = () => {
   function getInitialTodos() {
-    // getting stored items
     const temp = localStorage.getItem('todos');
     const savedTodos = JSON.parse(temp);
     return savedTodos || [];
@@ -56,7 +55,6 @@ const TodoContainer = () => {
   };
 
   useEffect(() => {
-    // storing todos items
     const temp = JSON.stringify(todos);
     localStorage.setItem('todos', temp);
   }, [todos]);
