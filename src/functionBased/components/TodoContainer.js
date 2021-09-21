@@ -71,7 +71,7 @@ const TodoContainer = () => {
       <Navbar />
       <Switch>
         <Route exact path="/">
-          ...
+        
         </Route>
         <Route path="/about">
   <About />
